@@ -1,0 +1,11 @@
+version: '3.2'
+
+services:
+
+  vault:
+    build: images/vault
+    cap_add:
+      - IPC_LOCK
+    ports:
+      - '8200:8200'
+    restart: always
