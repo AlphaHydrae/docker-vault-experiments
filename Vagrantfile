@@ -28,9 +28,6 @@ Vagrant.configure(2) do |config|
     # Print versions
     docker --version
     docker-compose --version
-
-    # Start containers
-    cd /vagrant
-    docker-compose up --build -d
+    jq --version
   SHELL
 end

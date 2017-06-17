@@ -6,6 +6,8 @@ services:
     build: images/db
     container_name: db
     environment:
+      AUTH_ROLE:
+      AUTH_TOKEN:
       DATABASE_NAME: app
       DATABASE_USERNAME: app
     restart: always
