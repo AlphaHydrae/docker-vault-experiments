@@ -2,10 +2,27 @@ version: '3.2'
 
 services:
 
+  db:
+    build: images/db
+    container_name: db
+    environment:
+      DATABASE_NAME: app
+      DATABASE_USERNAME: app
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
   vault:
     build: images/vault
     cap_add:
       - IPC_LOCK
+    container_name: vault
     ports:
       - '8200:8200'
     restart: always
+    volumes:
+      - vault_data:/vault/data
+
+volumes:
+  db_data:
+  vault_data:
